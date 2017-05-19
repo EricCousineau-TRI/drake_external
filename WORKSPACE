@@ -4,3 +4,5 @@ local_repository(
     name = "drake",
     path = "externals/drake-distro",
 )
+
+# load("@drake//tools/protobuf.bzl", )
