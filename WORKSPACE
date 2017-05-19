@@ -6,3 +6,8 @@ local_repository(
 )
 
 # load("@drake//tools/protobuf.bzl", )
+
+# Load from WORKSPACE?
+# https://groups.google.com/forum/#!topic/bazel-discuss/OhBIZ1DzSIw
+
+

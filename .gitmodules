@@ -1,4 +1,4 @@
-[submodule "drake-distro"]
-	path = drake-distro
-	url = https://github.com/RobotLocomotion/drake.git
-	branch = master
+[submodule "externals/drake-distro"]
+	path = externals/drake-distro
+	url = git@github.com:EricCousineau-TRI/drake.git
+	branch = feature/sep_deps
