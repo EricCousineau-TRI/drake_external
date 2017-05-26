@@ -5,5 +5,6 @@ cc_binary(
     srcs = ["drake_external.cc"],
     deps = [
         "@drake//drake/automotive:curve2",
+        "@drake//drake/solvers:mathematical_program",
     ],
 )
