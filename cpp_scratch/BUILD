@@ -4,6 +4,6 @@ cc_binary(
     name = "drake_external",
     srcs = ["drake_external.cc"],
     deps = [
-        "@drake//drake/common",
+        "@drake//drake/automotive:curve2",
     ],
 )
