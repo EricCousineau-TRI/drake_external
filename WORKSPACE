@@ -5,12 +5,12 @@ local_repository(
     path = "externals/drake-distro",
 )
 
-# Use workaround from:
-# * https://github.com/bazelbuild/bazel/issues/2757#issuecomment-290448615
-# * https://groups.google.com/forum/#!topic/bazel-discuss/OhBIZ1DzSIw
+# -- START drake externals
+# Copy and paste this code section to any external Bazel projects that depend
+# on drake and need its dependencies for convenience.
+# @note See @drake//tools:externals.bzl for more info.
 
-# Copied from @drake//WORKSPACE. Ensure that this is syncrhonized!!!
-# -- START Required Load-Level Transitive Dependencies
+# Rule prerequisites.
 load("@drake//tools:github.bzl", "github_archive")
 # Required for buildifier.
 github_archive(
@@ -19,7 +19,8 @@ github_archive(
     commit = "0.4.4",
     sha256 = "afec53d875013de6cebe0e51943345c587b41263fdff36df5ff651fbf03c1c08",
 )
-# -- END Required Load-Level Transitive Dependencies
 
-load("@drake//tools:drake_deps.bzl", "drake_deps")
-drake_deps() # Ignore install_dir, don't need drake-visualizer right now
+# Load external repostories.
+load("@drake//tools:externals.bzl", "drake_external_repositories")
+drake_external_repositories()
+# -- END drake externals

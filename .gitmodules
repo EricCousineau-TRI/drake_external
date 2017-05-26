@@ -1,4 +1,4 @@
 [submodule "externals/drake-distro"]
 	path = externals/drake-distro
-	url = git@github.com:EricCousineau-TRI/drake.git
+	url = https://github.com/EricCousineau-TRI/drake.git
 	branch = feature/sep_deps
