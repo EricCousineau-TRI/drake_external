@@ -4,10 +4,8 @@ cc_binary(
     name = "example",
     srcs = ["example.cc"],
     deps = [
-        "@drake//drake/solvers:mathematical_program",
+        # Use mega library.
+        # @note This can be made more granular.
+        "@drake//drake",
     ],
-    data = [
-        # Use mega library as data so it can build
-        "@drake//drake:libdrake.so",
-    ], 
 )
