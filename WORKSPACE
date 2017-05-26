@@ -9,9 +9,10 @@ local_repository(
 # * https://github.com/bazelbuild/bazel/issues/2757#issuecomment-290448615
 # * https://groups.google.com/forum/#!topic/bazel-discuss/OhBIZ1DzSIw
 
-# Copied from @drake//WORKSPACE
+# Copied from @drake//WORKSPACE. Ensure that this is syncrhonized!!!
 # -- START Required Load-Level Transitive Dependencies
-load("//tools:github.bzl", "github_archive")
+load("@drake//tools:github.bzl", "github_archive")
+# Required for buildifier.
 github_archive(
     name = "io_bazel_rules_go",
     repository = "bazelbuild/rules_go",
@@ -20,7 +21,5 @@ github_archive(
 )
 # -- END Required Load-Level Transitive Dependencies
 
-load("//tools:drake_deps.bzl", "drake_deps")
-# Also works (because of hack):
-#   load("@drake//tools:drake_deps.bzl", "drake_deps")
-drake_deps()
+load("@drake//tools:drake_deps.bzl", "drake_deps")
+drake_deps() # Ignore install_dir, don't need drake-visualizer right now
