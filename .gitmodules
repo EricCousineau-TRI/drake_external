@@ -1,4 +1,4 @@
 [submodule "externals/drake-distro"]
 	path = externals/drake-distro
 	url = https://github.com/EricCousineau-TRI/drake.git
-	branch = feature/sep_deps
+	branch = feature/sep_deps_rebase-wip
