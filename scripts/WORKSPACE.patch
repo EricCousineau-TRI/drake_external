@@ -1,0 +1,37 @@
+diff --git a/externals/drake-distro/WORKSPACE b/WORKSPACE
+index 566a0f2..c720778 100644
+--- a/externals/drake-distro/WORKSPACE
++++ b/WORKSPACE
+@@ -3,7 +3,7 @@
+ # This file marks a workspace root for the Bazel build system. see
+ # http://bazel.io/ .
+ 
+-workspace(name = "drake")
++workspace(name = "drake_external")
+ 
+ # -- START drake externals
+ # Copy and paste this code section to any external Bazel projects that depend
+@@ -11,17 +11,17 @@
+ # @note See @drake//tools:externals.bzl for more info.
+ 
+ # Set this to the relative path of drake relative to the active WORKSPACE.
+-drake_relative_path = "."
++drake_relative_path = "externals/drake-distro"
+ # Set this to the absolute path of the CMake build/ directory to consume
+ # drake-visualizer (#5621). Use __workspace_dir__ if needed.
+ drake_cmake_install_path = "{}/{}/{}".format(__workspace_dir__,
+     drake_relative_path, "build/install")
+ 
+-# # Enable this if drake is being consumed as an external local repository.
+-# local_repository(
+-#     name = "drake",
+-#     path = drake_relative_path,
+-# )
++# Enable this if drake is being consumed as an external local repository.
++local_repository(
++    name = "drake",
++    path = drake_relative_path,
++)
+ 
+ # Load external rules that are immediately used to define other externals.
+ load("@drake//tools:externals_rules.bzl", "drake_external_rule_repositories")
